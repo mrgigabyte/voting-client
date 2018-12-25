@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 
 module.exports = {
-    mode: 'development',
+  mode: 'development',
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
@@ -26,7 +26,7 @@ module.exports = {
     headers:          { 'Access-Control-Allow-Origin': '*' },
     https:            false,
     disableHostCheck: true,
-    contentBase: './dist',
+    contentBase: './web',
     hot: true
   },
   plugins: [

@@ -10,7 +10,7 @@ class Vote extends React.PureComponent {
     }
 
     getPair() {
-        console.log(this.props.pair)
+        console.log('pair', this.props.pair)
         return this.props.pair || [];
     }
 
