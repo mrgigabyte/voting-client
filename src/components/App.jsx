@@ -9,24 +9,22 @@ const Augment = (Component) => (props) =>
 class App extends React.Component {
 
     render(){
-        let children = []
-        React.Children.forEach(this.props.children, (child) => {
+        return React.Children.map(this.props.children, (child) => {
             if (child.props && child.props.component) {
                 // if it has a component props, we assume it is a router child and thus we need to augment it
-                children.push(React.cloneElement(child, {
+                return React.cloneElement(child, {
                     component: Augment(child.props.component)
-                }))
+                })
             } else if (child.props && child.props.render) {
                 // render is also a possibility - handle it too
-                children.push(React.cloneElement(child, {
+                return React.cloneElement(child, {
                     render: Augment(child.props.render)
-                }))
+                })
             } else {
                 // pass-through if is not found to be a router child
-                children.push(child)
+                return child
             }
         })
-        return children
     }
 
 }
