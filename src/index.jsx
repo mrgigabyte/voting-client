@@ -5,12 +5,12 @@ import App from './components/App';
 import {  Route, HashRouter, Switch } from 'react-router-dom';
 
 // const pair = ['Trainspotting', '28 Days Later'];
-
-const routes = 
-                   <App >
-                           <Route path="/" render={({pair}) => <Voting pair={pair} />} />
-                     
-                    </App>;
+ 
+const routes = (
+    <App>
+        <Route path='/' component={Voting} />
+    </App>
+)
                
 
 // ReactDOM.render(
